@@ -4,7 +4,7 @@ import validate from './middleware/validateRequest.js';
 import bodyParser from 'body-parser';
 const app = express();
 
-app.listen(3000);
+app.listen(process.env.PORT||3000);
 app.use(bodyParser.urlencoded({ extended: true }))
 
 let schema = yup.object().shape({
