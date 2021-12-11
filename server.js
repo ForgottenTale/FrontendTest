@@ -9,8 +9,7 @@ const app = express();
 app.listen(3000);
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors({
-    origin: '*',
-    "Access-Control-Allow-Origin": "*"
+    origin: '*'
 }));
 
 let schema = yup.object().shape({
