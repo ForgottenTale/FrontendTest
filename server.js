@@ -2,10 +2,13 @@ import express from 'express';
 import yup from 'yup';
 import validate from './middleware/validateRequest.js';
 import bodyParser from 'body-parser';
+import cors from 'cors';
+
 const app = express();
 
-app.listen(process.env.PORT||3000);
+app.listen(3000);
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors());
 
 let schema = yup.object().shape({
     name: yup.string().required(),
