@@ -6,11 +6,9 @@ import cors from 'cors';
 
 const app = express();
 
-app.listen(3000);
+app.listen(process.env.PORT||3000);
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors())
 
 let schema = yup.object().shape({
     name: yup.string().required(),
